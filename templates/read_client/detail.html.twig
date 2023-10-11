@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails du client{% endblock %}
+
+{% block body %}
+<h1>Détails du client</h1>
+<table>
+    <tr>
+        <th>N° Client</th>
+        <td>{{ clients.ncli }}</td>
+    </tr>
+    <tr>
+        <th>Nom</th>
+        <td>{{ clients.nom }}</td>
+    </tr>
+    <tr>
+        <th>Adresse</th>
+        <td>{{ clients.adresse }}</td>
+    </tr>
+    <tr>
+        <th>Localité</th>
+        <td>{{ clients.localite }}</td>
+    </tr>
+    <tr>
+        <th>Catégorie</th>
+        <td>{{ clients.cat }}</td>
+    </tr>
+    <tr>
+        <th>Compte</th>
+        <td>{{ clients.compte }}</td>
+    </tr>
+</table>
+<a href="{{ path('app_read_client') }}">Retour à la liste des clients</a>
+{% endblock %}

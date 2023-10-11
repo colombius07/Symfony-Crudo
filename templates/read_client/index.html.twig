@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReadClientController!{% endblock %}
+
+{% block body %}
+<h1>{% if clients|length == 1 %}Détails du client{% else %}Liste des clients{% endif %}</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ncli</th>
+            <th>nom</th>
+            <th>adresse</th>
+            <th>localite</th>
+            <th>cat</th>
+            <th>compte</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for donnee in clients %}
+            <tr>
+                <td>{{ donnee.ncli }}</td>
+                <td>{{ donnee.nom }}</td>
+                <td>{{ donnee.adresse }}</td>
+                <td>{{ donnee.localite }}</td>
+                <td>{{ donnee.cat }}</td>
+                <td>{{ donnee.compte }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<style>
+    td{
+        border:solid 1px;
+    }
+</style>
+{% endblock %}
